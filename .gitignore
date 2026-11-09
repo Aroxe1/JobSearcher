@@ -1,0 +1,18 @@
+# Personal job-search profiles — never commit these
+job-search-profile.md
+*-profile.local.md
+.job-search/
+profile.local.md
+
+# Personal documents people might drop in the repo by mistake
+*.pdf
+*.docx
+
+# skill-creator test workspaces
+*-workspace/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
