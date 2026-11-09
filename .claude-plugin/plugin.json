@@ -1,0 +1,9 @@
+{
+  "name": "job-search",
+  "version": "1.1.0",
+  "description": "Assistant de recherche d'alternance, stage et emploi (FR/EN) : profil local, offres réelles, export Excel, candidatures et relances.",
+  "author": { "name": "Royon Maxence" },
+  "license": "MIT",
+  "keywords": ["job-search", "alternance", "internship", "stage", "emploi", "cv"],
+  "skills": "./"
+}

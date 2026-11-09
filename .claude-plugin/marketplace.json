@@ -1,0 +1,11 @@
+{
+  "name": "job-search-skill",
+  "owner": { "name": "Royon Maxence" },
+  "plugins": [
+    {
+      "name": "job-search",
+      "source": "./",
+      "description": "Assistant de recherche d'alternance, stage et emploi : apprend à vous connaître, trouve de vraies offres, prépare candidatures et relances. / Apprenticeship, internship and job search assistant."
+    }
+  ]
+}

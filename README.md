@@ -21,15 +21,24 @@ Pour étudiants, jeunes diplômés, personnes en reconversion — tous domaines,
 
 ### Installation
 
-**Claude Code (recommandé)** — copier le dossier `job-search` dans vos skills :
+**Claude Code (recommandé) — via le marketplace**, deux commandes à taper dans Claude Code :
 
-```bash
-git clone https://github.com/<votre-utilisateur>/<nom-du-repo>.git
-mkdir -p ~/.claude/skills
-cp -r <nom-du-repo>/job-search ~/.claude/skills/
+```
+/plugin marketplace add Aroxe1/JobSearcher
+/plugin install job-search@job-search-skill
 ```
 
-Sous Windows (PowerShell) : `Copy-Item -Recurse <nom-du-repo>\job-search $HOME\.claude\skills\`
+Ou, depuis un terminal : `claude plugin marketplace add Aroxe1/JobSearcher` puis `claude plugin install job-search@job-search-skill`. Mise à jour : `/plugin marketplace update job-search-skill`.
+
+**Claude Code — copie manuelle** du dossier `job-search` dans vos skills :
+
+```bash
+git clone https://github.com/Aroxe1/JobSearcher.git
+mkdir -p ~/.claude/skills
+cp -r JobSearcher/job-search ~/.claude/skills/
+```
+
+Sous Windows (PowerShell) : `Copy-Item -Recurse JobSearcher\job-search $HOME\.claude\skills\`
 
 Pour un seul projet : copiez-le plutôt dans `.claude/skills/` à la racine du projet.
 
@@ -55,6 +64,7 @@ La recherche d'offres nécessite que la **recherche web** soit activée.
 ### Structure
 
 ```
+.claude-plugin/                     # marketplace.json + plugin.json (installation via /plugin)
 job-search/
 ├── SKILL.md                         # instructions du skill
 ├── references/
@@ -92,15 +102,24 @@ For students, recent graduates and career changers — any field, any country.
 
 ### Installation
 
-**Claude Code (recommended)** — copy the `job-search` folder into your skills:
+**Claude Code (recommended) — via the marketplace**, two commands inside Claude Code:
 
-```bash
-git clone https://github.com/<your-username>/<repo-name>.git
-mkdir -p ~/.claude/skills
-cp -r <repo-name>/job-search ~/.claude/skills/
+```
+/plugin marketplace add Aroxe1/JobSearcher
+/plugin install job-search@job-search-skill
 ```
 
-On Windows (PowerShell): `Copy-Item -Recurse <repo-name>\job-search $HOME\.claude\skills\`
+Or from a terminal: `claude plugin marketplace add Aroxe1/JobSearcher` then `claude plugin install job-search@job-search-skill`. Update with `/plugin marketplace update job-search-skill`.
+
+**Claude Code — manual copy** of the `job-search` folder into your skills:
+
+```bash
+git clone https://github.com/Aroxe1/JobSearcher.git
+mkdir -p ~/.claude/skills
+cp -r JobSearcher/job-search ~/.claude/skills/
+```
+
+On Windows (PowerShell): `Copy-Item -Recurse JobSearcher\job-search $HOME\.claude\skills\`
 
 For a single project: copy it into `.claude/skills/` at the project root instead.
 
