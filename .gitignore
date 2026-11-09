@@ -4,9 +4,11 @@ job-search-profile.md
 .job-search/
 profile.local.md
 
-# Personal documents people might drop in the repo by mistake
+# Personal documents and offer exports people might drop in the repo by mistake
 *.pdf
 *.docx
+*.xlsx
+*.csv
 
 # skill-creator test workspaces
 *-workspace/

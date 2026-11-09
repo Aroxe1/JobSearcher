@@ -84,6 +84,13 @@ Around 5–10 searches is usually enough; stop earlier if results repeat.
 
 **Be honest about results.** Don't promise outcomes. If few offers match, say so plainly and suggest concrete ways to widen: nearby cities, remote, related job titles, different company sizes, unsolicited applications (candidature spontanée) to companies listed in the target sector, school career services. A short honest list beats a padded one.
 
+**Export to Excel.** After presenting the results, save them as an `.xlsx` file with the bundled script (standard Python, nothing to install):
+1. Write the offers to a temporary JSON file in a temp/scratch folder (never in the user's folder): a list of objects, one per offer, with keys in the user's language matching the table columns, plus "Verified" (yes / to check) and "Alert" (expired, school posting, possible scam…). Include the "to check" offers. `#` is a number; dates are absolute (YYYY-MM-DD, converted from "6 days ago"); the same offer seen on two boards is one row. Example (French): `{"#": 1, "Poste": "…", "Entreprise": "…", "Lieu": "…", "Contrat": "…", "Publiée le": "2026-11-03", "Lien": "https://…", "Pourquoi ça correspond": "…", "Vérifiée": "oui", "Alerte": ""}`
+2. Run the script by its absolute path: `python <this skill's folder>/scripts/export_offers.py <offers.json> <output.xlsx> --sheet "<Offres YYYY-MM-DD>"` (on Windows, set `PYTHONUTF8=1` if accents cause errors).
+3. Save the file next to the profile, named in the user's language with today's date (e.g. `offres-2026-11-09.xlsx`), then delete the temporary JSON. Tell the user the path: links are clickable, columns can be filtered.
+
+If there are no offers at all, skip the file and say so. If Python can't run here, use another spreadsheet tool if available; otherwise say the export wasn't possible and keep the table in the chat.
+
 **Then offer next steps**, e.g.: tailor the CV for offer #2, draft a cover letter or application email, prepare an interview, plan a follow-up. For writing applications, read `references/application-templates.md`. Offer to save drafts as Markdown files next to the profile (e.g. `letter-<company>.md`) so the user can reuse them.
 
 ## Step 5 — Follow-up and profile updates
