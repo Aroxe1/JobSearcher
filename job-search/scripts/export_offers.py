@@ -130,6 +130,8 @@ def main():
     parser.add_argument("output_xlsx")
     parser.add_argument("--sheet", default="Offers", help="worksheet name, in the user's language")
     args = parser.parse_args()
+    if hasattr(sys.stdout, "reconfigure"):  # accents in paths must not crash a Windows console
+        sys.stdout.reconfigure(errors="replace")
     with open(args.offers_json, encoding="utf-8") as f:
         rows = json.load(f)
     if not isinstance(rows, list) or not all(isinstance(r, dict) for r in rows):
@@ -137,7 +139,7 @@ def main():
     with zipfile.ZipFile(args.output_xlsx, "w", zipfile.ZIP_DEFLATED) as z:
         for path, xml in build(rows, sheet_name(args.sheet)).items():
             z.writestr(path, xml)
-    print(f"Wrote {len(rows)} offers to {args.output_xlsx}")
+    print(f"Wrote {len(rows)} rows to {args.output_xlsx}")
 
 
 if __name__ == "__main__":
