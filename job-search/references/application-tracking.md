@@ -14,13 +14,15 @@ Tracking lives in the profile file, section "Tracked applications", as a Markdow
 ## Statuses
 `To apply` → `Applied` → `Followed up` → `Interview` → `Offer` / `Rejected` / `No answer` / `Withdrawn`
 
-Write statuses in the profile's language (e.g. French: `À postuler`, `Postulé`, `Relancé`, `Entretien`, `Offre`, `Refus`, `Sans réponse`, `Abandonné`) and keep them consistent within one file. Translating an existing status to that language is not a status change. For an offer the user pasted (no URL), put "pasted by user" plus the contact email in Link.
+Write statuses in the profile's language (e.g. French: `À postuler`, `Postulé`, `Relancé`, `Entretien`, `Offre`, `Refus`, `Sans réponse`, `Abandonné`) and keep them consistent within one file. Translating an existing status to that language is not a status change. For an offer the user pasted (no URL), put "pasted by user" (in the profile's language) plus the contact email in Link.
 
 A status changes only when the user confirms the action happened. A drafted but unsent follow-up keeps the current status; set Next action to "Send follow-up (draft ready)" with Due = today.
 
 Defaults:
+- `To apply` → next action "Apply", due today, or the offer's closing date if earlier
 - `Applied` → next action "Follow up", due +7 to +10 days
-- `Followed up` → second follow-up +14 days, then `No answer`
+- `Followed up` → second follow-up +14 days after the first one was actually sent, then `No answer`
+- An overdue follow-up can still be sent: suggest sending it now, with no need to apologise for the delay.
 - `Interview` → "Send thank-you note" same/next day, then "Follow up" +7 days
 - `Rejected` → optional "Ask for feedback"; keep the row (history helps spot patterns)
 

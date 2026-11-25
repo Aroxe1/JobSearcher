@@ -1,6 +1,9 @@
 {
   "name": "job-search-skill",
-  "owner": { "name": "Royon Maxence" },
+  "description": "Skill Claude de recherche d'alternance, de stage et d'emploi / Apprenticeship, internship and job search skill for Claude.",
+  "owner": {
+    "name": "Royon Maxence"
+  },
   "plugins": [
     {
       "name": "job-search",

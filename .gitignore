@@ -1,5 +1,7 @@
 # Personal job-search profiles — never commit these
 job-search-profile.md
+# ...except the fake profiles used by the skill's tests
+!job-search/evals/*/files/job-search-profile.md
 *-profile.local.md
 .job-search/
 profile.local.md

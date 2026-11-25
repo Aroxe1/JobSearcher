@@ -14,6 +14,7 @@ Pour étudiants, jeunes diplômés, personnes en reconversion — tous domaines,
 - **Onboarding** par petits groupes de questions (type de contrat, formation, poste visé, dates, lieu, compétences…). Les questions sensibles sont toujours facultatives.
 - **Profil local** en Markdown, réutilisé à chaque session et modifiable à la main.
 - **Recherche d'offres** sur plusieurs sources adaptées à votre pays (ex. France : France Travail, La Bonne Alternance, Welcome to the Jungle, Indeed, LinkedIn, JobTeaser…), présentées dans un tableau trié par pertinence, avec signalement des offres douteuses ou périmées. Aucune offre inventée.
+- **Entreprises pour candidatures spontanées** : beaucoup de postes ne sont jamais publiés. Le skill liste de vraies entreprises actives de votre secteur et de votre zone (en France via l'annuaire officiel des entreprises, gratuit et sans compte), vérifie leur site et comment postuler, puis aide à écrire des candidatures spontanées personnalisées.
 - **Export Excel** : à la fin de chaque recherche, les offres sont enregistrées dans un fichier `.xlsx` (liens cliquables, colonnes filtrables) à côté de votre profil. Il faut seulement Python, sans rien installer de plus.
 - **Candidatures** : adaptation du CV, lettre de motivation, mail de candidature, préparation d'entretien, relances.
 - **Suivi** des candidatures (statut, prochaine action, date de relance).
@@ -52,6 +53,7 @@ La recherche d'offres nécessite que la **recherche web** soit activée.
 - « Trouve-moi des offres de CDI en comptabilité près de Nantes »
 - « Peux-tu adapter mon CV pour cette offre ? »
 - « Rédige une lettre de motivation pour ce poste »
+- « Quelles entreprises je peux contacter pour une candidature spontanée en alternance à Lille ? »
 - « Je dois relancer une entreprise, tu m'aides ? »
 - « Je suis en reconversion, je ne sais pas quel métier viser »
 
@@ -70,15 +72,21 @@ job-search/
 ├── references/
 │   ├── onboarding-questions.md      # banque de questions détaillée
 │   ├── job-sources.md               # sources d'offres par pays
+│   ├── company-search.md            # recherche d'entreprises pour candidatures spontanées
 │   ├── application-templates.md     # CV, lettre, mail, relance, entretien
 │   └── application-tracking.md      # suivi des candidatures
 ├── scripts/
-│   └── export_offers.py             # export des offres en .xlsx (Python standard)
+│   ├── export_offers.py             # export des offres en .xlsx (Python standard)
+│   └── find_companies_fr.py         # entreprises actives par secteur et commune (annuaire officiel FR)
+├── evals/                           # scénarios de test du skill
 └── templates/
     └── profile.md                   # modèle vierge du profil
+tests/test_scripts.py                # tests automatiques des scripts
 ```
 
-Contributions bienvenues, en particulier pour ajouter des sources d'offres pour d'autres pays (`references/job-sources.md`).
+Contributions bienvenues, en particulier pour ajouter des sources d'offres ou des annuaires d'entreprises pour d'autres pays (`references/job-sources.md`, `references/company-search.md`).
+
+**Tests** : `python -m unittest discover -s tests` (scripts, hors ligne). Scénarios du skill : `claude plugin eval . --eval-dir job-search/evals --allow-tools Write,Edit,Bash,WebSearch,WebFetch --scaffold` (exécutions réelles et facturées).
 
 ### Licence
 MIT — voir [LICENSE](LICENSE).
@@ -95,6 +103,7 @@ For students, recent graduates and career changers — any field, any country.
 - **Onboarding** in small groups of questions (contract type, studies, target role, dates, location, skills…). Sensitive questions are always optional.
 - **Local profile** in Markdown, reused every session and editable by hand.
 - **Job search** across several sources suited to your country (e.g. UK: Find an apprenticeship, Prospects, Indeed; US: Handshake, LinkedIn, USAJOBS…), shown in a table sorted by fit, with suspicious or expired offers flagged. No made-up offers.
+- **Companies for unsolicited applications**: many positions are never posted. The skill lists real, active companies in your sector and area (in France through the official company directory, free and with no account), checks their website and how to apply, then helps you write personalised unsolicited applications.
 - **Excel export**: after each search, offers are saved to an `.xlsx` file (clickable links, filterable columns) next to your profile. Only needs Python, nothing else to install.
 - **Applications**: CV tailoring, cover letters, application emails, interview prep, follow-ups.
 - **Tracking** of applications (status, next action, follow-up date).
@@ -133,6 +142,7 @@ Job search requires **web search** to be enabled.
 - "Help me find an apprenticeship in electrical engineering"
 - "Can you tailor my CV to this job posting?"
 - "Write a cover letter for this role"
+- "Which companies near Bristol could I send a speculative application to for an engineering placement?"
 - "I applied to Acme two weeks ago and heard nothing — help me follow up"
 - "I'm changing careers and don't know which jobs to target"
 
@@ -143,7 +153,9 @@ Job search requires **web search** to be enabled.
 - ⚠️ **Never commit your profile file.** This repo's `.gitignore` excludes `job-search-profile.md`, `.job-search/` and `.pdf`/`.docx`/`.xlsx`/`.csv` files (so a CV or offer export doesn't get published by mistake) — but other repos don't have that rule. Check `git status` before every commit.
 
 ### Contributing
-Contributions welcome, especially job sources for more countries (`references/job-sources.md`).
+Contributions welcome, especially job sources and company registers for more countries (`references/job-sources.md`, `references/company-search.md`).
+
+**Tests**: `python -m unittest discover -s tests` (scripts, offline). Skill scenarios: `claude plugin eval . --eval-dir job-search/evals --allow-tools Write,Edit,Bash,WebSearch,WebFetch --scaffold` (real, billed runs).
 
 ### License
 MIT — see [LICENSE](LICENSE).

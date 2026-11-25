@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: onboarding-from-first-message
+expected_outcome: |
+  The skill records the answers already given without asking them again, creates job-search-profile.md in the current folder following the template, tells the user where it is saved and that it stays local, and stores no sensitive data.

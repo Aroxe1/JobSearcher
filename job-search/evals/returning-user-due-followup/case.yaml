@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: returning-user-due-followup
+expected_outcome: |
+  The skill reads the existing profile, first mentions that the follow-up for Atelier Numérique Ouest was due on 2026-11-07 and is overdue, summarises the profile in 2-3 lines, asks whether anything changed, and neither re-runs the onboarding nor sends anything.
+context:
+  scaffold_script: place-files.sh

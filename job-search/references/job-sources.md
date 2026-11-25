@@ -7,7 +7,7 @@ Useful search patterns (adapt language):
 - Exact job title + synonyms; English titles too for international companies.
 
 ## France
-- **France Travail** (francetravail.fr) — national public employment service, all contracts. Fetch its own results page (`https://candidat.francetravail.fr/offres/recherche?motsCles=<keywords>&lieux=<commune INSEE code, or département code + "D" like 44D>`) rather than offer links from a web search, which are often expired. Offer pages are `/offres/recherche/detail/<id>`.
+- **France Travail** (francetravail.fr) — national public employment service, all contracts. Fetch its own results page (`https://candidat.francetravail.fr/offres/recherche?motsCles=<keywords>&lieux=<commune INSEE code, or département code + "D" like 44D>`) rather than offer links from a web search, which are often expired. Offer pages are `/offres/recherche/detail/<id>`; their full description may load with JavaScript, but the results page already shows title, company, place and date (enough for a "to check" entry).
 - **La Bonne Alternance** (labonnealternance.apprentissage.beta.gouv.fr) — apprenticeships + companies likely to hire apprentices
 - **1jeune1solution** (1jeune1solution.gouv.fr) — jobs, internships, apprenticeships for under-30s
 - **Welcome to the Jungle** (welcometothejungle.com) — startups/SMEs, good company pages

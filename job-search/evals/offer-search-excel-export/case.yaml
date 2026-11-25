@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: offer-search-excel-export
+expected_outcome: |
+  The skill reads the existing profile without re-running the onboarding, searches real offers (preferring the job boards' own search pages), presents only offers whose pages were consulted, labels unverified ones, and exports them to an offres-YYYY-MM-DD.xlsx file next to the profile.
+context:
+  scaffold_script: place-files.sh

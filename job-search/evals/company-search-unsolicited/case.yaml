@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: company-search-unsolicited
+expected_outcome: |
+  Using the existing profile (web development apprenticeship, Nantes, no defence sector), the skill lists real, active companies from an official register or directory, opens each shortlisted company's website, presents a table with how to apply, exports it to an entreprises-YYYY-MM-DD.xlsx file next to the profile, is honest about response rates, and invents no website, email or contact.
+context:
+  scaffold_script: place-files.sh
